@@ -2,31 +2,40 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour 
 {
-    public int health;
-    public int maxHealth;
-    public float stamina;
-    public float maxStamina;
-    public float movementSpeed;
-    public float sprintSpeed;
+    private PlayerMovement playerMovement;
+    public float health = 100;
+    public float maxHealth = 100;
+    public float hunger = 100;
+    public float maxHunger = 100;
+    public float thirst = 100;
+    public float maxThirst = 100;
+    public float stamina = 100f;
+    public float maxStamina = 100f;
+    public float movementSpeed = 5f;
+    public float sprintSpeed = 2.5f;
 
-    private void Start()
+    private void Awake()
     {
-        health = 100;
-        maxHealth = 100;
-        sprintSpeed = 2.5f;
-        movementSpeed = 5f;
+        if(playerMovement == null)
+            playerMovement = GetComponent<PlayerMovement>();
+    }
+    private void Update()
+    {
 
-        if(health>maxHealth)
-        {
-            health = maxHealth;
-        }
-        else if(health<=0)
-        {
+        health = Mathf.Clamp(
+           health,
+           0f,
+           maxHealth
+       );
+
+        if (health <= 0)
+       {
             Debug.Log("gameover");
-        }
+       }
+    }
 
-        stamina = 100;
-        maxStamina = 100;
-
+    public void Damage(int damage)
+    {
+        health -= damage;
     }
 }

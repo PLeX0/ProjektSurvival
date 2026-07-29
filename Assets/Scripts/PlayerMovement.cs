@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float staminaRegenerationDelay = 2f;
     [SerializeField] private float jumpStaminaCost = 10f;
 
+
     [Header("References")]
     [SerializeField] private CharacterController player;
     [SerializeField] private PlayerStats playerStats;
 
     private float verticalVelocity;
     private float lastStaminaUseTime;
+
 
     private void Awake()
     {
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isSprinting)
         {
+            
             currentSpeed += playerStats.sprintSpeed;
 
             playerStats.stamina -=
@@ -76,10 +79,10 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = -2f;
         }
 
-        if (player.isGrounded &&
-            Input.GetButtonDown("Jump") &&
-            playerStats.stamina >= jumpStaminaCost)
+        if (player.isGrounded && Input.GetButtonDown("Jump") && playerStats.stamina >= jumpStaminaCost)
         {
+           
+
             playerStats.stamina -= jumpStaminaCost;
 
             verticalVelocity =
@@ -96,8 +99,10 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Time.time - lastStaminaUseTime >= staminaRegenerationDelay)
         {
+
             playerStats.stamina +=
                 staminaRegenerationPerSecond * Time.deltaTime;
+            
         }
 
         playerStats.stamina = Mathf.Clamp(
