@@ -4,6 +4,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private float interactionDistance = 3f;
+    private InventorySystem inventory;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -21,6 +22,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             Debug.Log(hit.collider.gameObject.name);
         }
+
+
     }
 
 }
