@@ -4662,6 +4662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MouseLook
   mouseSensitivity: 2.5
   playerBody: {fileID: 1609140698}
+  canLooking: 0
 --- !u!1 &330786285 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1076262714343606, guid: 68cbfa1438162b243ac02fb9e3e30581, type: 3}
@@ -5855,7 +5856,7 @@ Transform:
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 562.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12364,7 +12365,7 @@ Transform:
   m_GameObject: {fileID: 832575517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 562.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22380,7 +22381,7 @@ Transform:
   m_GameObject: {fileID: 1609140692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.56, y: 23.43, z: 50.13}
+  m_LocalPosition: {x: 80.56, y: 23.43, z: 612.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22401,6 +22402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   jumpHeight: 1
   gravity: -20
+  canMove: 0
   sprintStaminaDrainPerSecond: 20
   staminaRegenerationPerSecond: 10
   staminaRegenerationDelay: 2
@@ -22472,8 +22474,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361c08835caeaa04a83a17a3367bf421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
-  slot: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  isInventoryFull: 0
+  slots:
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  - itemId: -1
+    amount: 0
+  itemDatabase: {fileID: 11400000, guid: b9ad5844ba1b81e4daa82d8d08737d4b, type: 2}
 --- !u!1001 &1609220731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26726,7 +26778,7 @@ Transform:
   m_GameObject: {fileID: 1937043895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 562.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27037,6 +27089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
   inventoryPanel: {fileID: 1467806159}
   isInventoryOpen: 0
+  mouseLook: {fileID: 330585548}
+  playerMovement: {fileID: 1609140699}
 --- !u!4 &1958163056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4252784401376168, guid: 22a3fd8d3e59a1149bdcd775c0e87241, type: 3}
@@ -27774,7 +27828,7 @@ Transform:
   m_GameObject: {fileID: 1990723701}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.70511, y: 21.99878, z: 52.44294}
+  m_LocalPosition: {x: 81.70511, y: 21.99878, z: 614.8129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
