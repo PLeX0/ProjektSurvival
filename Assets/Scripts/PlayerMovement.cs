@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -20f;
+    public bool canMove;
 
     [Header("Stamina")]
     [SerializeField] private float sprintStaminaDrainPerSecond = 20f;
@@ -33,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         {
             playerStats = GetComponent<PlayerStats>();
         }
+
+        canMove = true;
     }
 
     private void Update()
@@ -42,15 +45,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 movementDirection = Vector3.zero;
+        if (canMove)
+        {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 movementDirection =
-            transform.right * horizontal +
-            transform.forward * vertical;
+            movementDirection =
+                transform.right * horizontal +
+                transform.forward * vertical;
 
-        movementDirection = movementDirection.normalized;
-
+            movementDirection = movementDirection.normalized;
+        }
         bool isMoving = movementDirection.sqrMagnitude > 0f;
 
         bool isSprinting =
@@ -118,5 +124,6 @@ public class PlayerMovement : MonoBehaviour
             Vector3.up * verticalVelocity;
 
         player.Move(finalMovement * Time.deltaTime);
+       
     }
 }
