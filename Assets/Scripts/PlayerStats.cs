@@ -3,12 +3,16 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour 
 {
     private PlayerMovement playerMovement;
+    [Header("Health")]
     public float health = 100;
     public float maxHealth = 100;
-    public float hunger = 100;
+    [Header("Hunger")]
+    public float hunger = 100;  
     public float maxHunger = 100;
+    [Header("Thirst")]
     public float thirst = 100;
     public float maxThirst = 100;
+    [Header("Stamina/Sprint")]
     public float stamina = 100f;
     public float maxStamina = 100f;
     public float movementSpeed = 5f;
